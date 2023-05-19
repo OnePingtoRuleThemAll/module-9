@@ -22,17 +22,7 @@ const questions = [
     },
     {
         type: "input",
-        message: "What did you learn?",
-        name: "learn"
-    },
-    {
-        type: "input",
-        message: "How can a user install this application?",
-        name: "install"
-    },
-    {
-        type: "input",
-        message: "Add a screenshot using ![alt text](.png)", //place screenshot info in here
+        message: "Please provide a relative path to the image you want, using ![alt text](.png)",
         name: "screenshot"
     },
     {
@@ -42,33 +32,37 @@ const questions = [
     },
     {
         type: "input",
-        message: "List all collaborators and links to their GitHub Profile",
-        name: "contributors"
+        message: "Please provide a valid email address.",
+        name: "email"
+    },
+    {
+        type: "input",
+        message: "List all collaborators (links to their GitHub Profile)",
+        name: "contributors",
+        default: ""
     },
     {
         type: "input",
         message: "Were there any third-party assets or tutorials used that require attribution?",
-        name: "thirdparty"
+        name: "thirdparty",
+        default: ""
     },
     {
         type: "input",
-        message: "How can a user test the application?",
-        name: "test"
+        message: "Provide walkthrough of required tests if applicable",
+        name: "test",
+        default: ""
     },
     {
         type: "input",
         message: "Add your GitHub so users can ask questions",
         name: "github"
     },
-    {
-        type: "input",
-        message: "How can other developers contribute?",
-        name: "contribute"
-}];
+];
 
 // TODO: Create a function to write README file
 function writeToFile(fileName, data) {
-    return fs.writeFileSync(path.join(process.cwd(), fielName), data);
+    return fs.writeFileSync(path.join(process.cwd(), filelName), data);
 }
 
 // TODO: Create a function to initialize app
