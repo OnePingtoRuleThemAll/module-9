@@ -1,19 +1,18 @@
 // TODO: Create a function that returns a license badge based on which license is passed in
 function renderLicesnseBadge(license) {
   if (license !== "none") {
-    return '![Github license]()' //insert license badge image
+    return `![Github license](https://img.shields.io/badge/license-${license}-yellowgreen.svg)`;
   }
   return "";
-}
-// If there is no license, return an empty string
-function renderLicenseBadge(license) {}
+};
 
 // TODO: Create a function that returns the license link
 // If there is no license, return an empty string
 function renderLicenseLink(license) {
   if (license !== "none") {
-    return '\n* [License](#license)\n';
+    return `\n* [License](#license)\n`;
   }
+    return "";
 }
 
 // TODO: Create a function that returns the license section of README
@@ -33,19 +32,30 @@ function generateMarkdown(data) {
   by ${data.name}
   ${renderLicenseBadge(data.licesnse)}
   ## Table of Contents
-  *[Description](#description)
-  *[Requirements](#requirements)
-  *[Usage](#useage)
-  *[Contact Me](#contact-me)
-  *[Contributors](#tcontributors)
-  *[Testing](#testing)
-  \`\`\`
-  ${data.conributors}
-  ##Testing
+  * [Description](#description)
+  * [Requirements](#requirements)
+  * [Usage](#useage)
+  * [Contact Me](#contact-me)
+  * [Contributors](#tcontributors)
+  * [Testing](#testing)
+  ${renderLicenseLink(data.license)}
+  ## Description
+  ${data.description}
+  ## Requirements
+  ${data.require}
+  ## Usage
+  ${data.usage}
+  ## Contact-Me
+  * Name - ${data.name}
+  * Email - ${data.email}
+  * Github - [${dtaa.creator}](https://github.com/${data.creator}/)
+  * ## Contributors
+  ${data.contributors}
+  ## Testing
   \`\`\`
   ${data.test}
   \`\`\`
-  ${renderLicenseBadge(data.license)}
+  ${renderLicenseSection(data.license)}
   `;
 }
 
